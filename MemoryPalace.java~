@@ -51,12 +51,9 @@ public class MemoryPalace{
       */ 
     public void addMemory(String location, String object, String 
                               bizarreDescription){
-        
-        
         List<String> describedObject = new LinkedList<String>();
         describedObject.add(bizarreDescription);
         describedObject.add(object);
-        
         this.memoryTour.add(location);
         this.items.add(object);
         this.memoryPalace.put(location, describedObject);
@@ -67,8 +64,8 @@ public class MemoryPalace{
       * @param item string to check if object in memory palace
       * @return boolean true if item in memory palace, false otherwise
       */ 
-    public boolean contains(String place){
-        return memoryTour.contains(place); 
+    public boolean contains(String item){
+        return items.contains(item); 
     }
     
     /**Removes an object from the memory palace based on its location
@@ -149,11 +146,6 @@ public class MemoryPalace{
             System.out.print("Where would you like to place this item in " +
                          "your memory palace? ");
             place = userInput.next();
-             if (n.contains(place)){
-                 System.out.print("This location already exists "+
-                            "in your memory palace please pick a new place:" );
-                 place = userInput.next();
-             }
             if (place.equals("stop")){
                 break;
             }
